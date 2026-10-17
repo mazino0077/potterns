@@ -6,12 +6,10 @@ class ProgrammLogger:
     _lock: Lock = Lock()
 
     def __new__(cls) -> "ProgrammLogger":
-        # Double-Checked Locking (Java'dagi synchronized blok muqobili)
         if cls._programm_logger is None:
             with cls._lock:
                 if cls._programm_logger is None:
                     instance = super().__new__(cls)
-                    # Boshlang'ich holat faqat 1 marta yaratiladi
                     instance._log_entries = ["This is log file."]
                     cls._programm_logger = instance
         return cls._programm_logger
@@ -21,7 +19,6 @@ class ProgrammLogger:
         return cls()
 
     def add_log_info(self, info: str) -> None:
-        # Log qo'shish ham ko'p oqimli muhitda xavfsiz bo'lishi uchun:
         with self._lock:
             self._log_entries.append(info)
 
@@ -29,7 +26,7 @@ class ProgrammLogger:
         print("\n".join(self._log_entries) + "\n")
 
 
-# --- Sinab ko'ramiz (Programm.java muqobili) ---
+
 if __name__ == "__main__":
     logger1 = ProgrammLogger.get_programm_logger()
     logger1.add_log_info("Starting math processing")
