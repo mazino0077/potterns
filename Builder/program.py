@@ -94,4 +94,7 @@ custom_pc = (
     .build()
 )
 
-print(custom_pc)
+# print(custom_pc)
+a=ComputerDirector(builder)
+office_pc = a.build_office_pc()
+print(office_pc)
