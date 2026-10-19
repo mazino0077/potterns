@@ -4,7 +4,6 @@ from builder import HttpClientBuilder
 def main():
   builder = HttpClientBuilder()
 
-  # 1. Himoyalangan ichki API uchun mijoz (Bearer token bilan)
   internal_api_client = (
       builder.set_base_url("https://api.myapp.com/v1")
       .set_timeout(5.0)
@@ -18,7 +17,6 @@ def main():
 
   print("\n" + "=" * 50 + "\n")
 
-  # 2. Tashqi ochiq servis uchun mijoz (SSL tekshiruvsiz yoki alohida timeout bilan)
   public_client = (
       builder.set_base_url("https://open-data.example.com")
       .set_timeout(15.0)
