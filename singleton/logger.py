@@ -36,4 +36,4 @@ if __name__ == "__main__":
     logger2 = ProgrammLogger.get_programm_logger()
     logger2.show_log_info()
 
-    print(logger1 is logger2)  # True
+    print(logger1 is logger2) 
