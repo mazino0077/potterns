@@ -8,7 +8,7 @@ class GameCharacter(Copyable):
         self._level = level
         self._weapon = weapon
 
-    # Getter va Setter metodlari
+   
     def get_id(self) -> int:
         return self._id
 
@@ -33,11 +33,11 @@ class GameCharacter(Copyable):
     def set_weapon(self, weapon: str) -> None:
         self._weapon = weapon
 
-    # Yangi qahramon nusxasini yaratish
+
     def clone(self) -> "GameCharacter":
         return GameCharacter(self._id, self._name, self._level, self._weapon)
 
-    # toString() muqobili
+
     def __str__(self) -> str:
         return (
             f"GameCharacter(id={self._id}, name='{self._name}', "
