@@ -6,4 +6,4 @@ class File(FileSystem):
         self.name = name
 
     def show(self, indent: str = "") -> None:
-        print(f"{indent}|---- {self.name}")
+        print(f"{indent}File: {self.name}")

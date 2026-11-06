@@ -15,11 +15,6 @@ class Folder(FileSystem):
             self.children.remove(item)
 
     def show(self, indent: str = "") -> None:
-        if indent == "":
-            print(self.name)
-        else:
-            print(f"{indent}|---- {self.name}")
-
-        next_indent = "    " if indent == "" else indent + "         "
+        print(f"{indent}Folder: {self.name}")
         for item in self.children:
-            item.show(next_indent)
+            item.show(indent + "    ")
