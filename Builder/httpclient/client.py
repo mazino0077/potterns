@@ -19,7 +19,7 @@ class HttpClient:
 
   def get(self, endpoint: str, params: Optional[Dict[str, Any]] = None) -> None:
     url = f"{self.base_url}/{endpoint.lstrip('/')}"
-    # Haqiqiy loyihada bu yerda httpx yoki requests orqali so'rov ketadi
+  
     print(f"[GET] -> {url}")
     print(f"  Timeout: {self.timeout}s | SSL: {self.verify_ssl}")
     print(f"  Headers: {self.headers}")
